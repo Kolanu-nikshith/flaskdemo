@@ -9,7 +9,6 @@ import rds_db as db
 
 @app.route('/<textdata>',methods = ['GET','POST'])
 def index(textdata):
-    db.insert_details(textdata)
     details = db.get_details()
     print(details)
     return "Data received to aws server"
