@@ -10,29 +10,32 @@ import rds_db as dat
 
 @app.route('/',methods = ['GET','POST'])
 def inde():
-    print("Hello world get")
-    print(request.data)
-    print("***\n\n")
-    print(request)
+    app.logger.info("---------------------------------------")
+    app.logger.info(request.data)
+    app.logger.info("---------------------------------------")
     return "Hello world"
 
 
 @app.route('/data/<textdata>',methods = ['GET','POST'])
 def index(textdata):
-    print("printing post data")
-    print(textdata)
+    app.logger.info("*****************************************\n")
+    app.logger.info(request.data)
+    app.logger.info("*****************************************\n")
+
+    app.logger.info("printing post data")
+    app.logger.info(textdata)
 
     details = dat.get_lm75()
-    print("***printing lm75 data from db***")
-    print(details)
+    app.logger.info("***printing lm75 data from db***")
+    app.logger.info(details)
 
     details = dat.get_mq2()
-    print("***printing mq2 data from db***")
-    print(details)
+    app.logger.info("***printing mq2 data from db***")
+    app.logger.info(details)
 
     details = dat.get_mq7()
-    print("***printing mq7 data from db***")
-    print(details)
+    app.logger.info("***printing mq7 data from db***")
+    app.logger.info(details)
     return "Data received to aws server"
 
 
