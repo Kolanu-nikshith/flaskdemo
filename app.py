@@ -14,7 +14,7 @@ def inde():
     return "Hello world"
 
 
-@app.route('/<textdata>',methods = ['GET','POST'])
+@app.route('/data/<textdata>',methods = ['GET','POST'])
 def index(textdata):
     print("printing post data")
     print(textdata)
