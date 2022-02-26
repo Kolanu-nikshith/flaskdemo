@@ -4,9 +4,10 @@ import pymysql
 table_created=1
 
 conn = pymysql.connect(
-        host= "test.cq7sapjb7scv.ap-south-1.rds.amazonaws.com", #endpoint link
+        #host= "test.cq7sapjb7scv.ap-south-1.rds.amazonaws.com", #endpoint link
+        host = "localhost"
         port = 3306, # 3306
-        user = "admin", # admin
+        user = "root", # admin
         password = "qwertyuiop", #rds.password, #adminadmin
         db = "test", #test
         )
