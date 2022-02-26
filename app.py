@@ -10,6 +10,7 @@ import rds_db as dat
 
 @app.route('/',methods = ['GET','POST'])
 def inde():
+    print("Hello world get")
     return "Hello world"
 
 
